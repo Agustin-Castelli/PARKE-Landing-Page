@@ -2,6 +2,6 @@
 {
     public class UserService
     {
-        private readonly
+        
     }
 }

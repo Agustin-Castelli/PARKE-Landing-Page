@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <Folder Include="Models\Exceptions\" />
-    <Folder Include="Services\Interfaces\" />
     <Folder Include="Services\DTOs\" />
   </ItemGroup>
 

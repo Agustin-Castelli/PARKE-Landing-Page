@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PARKE-Landing-Page")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7888aea4767df2a1ea0db3a8c3602acb34e2b837")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ac203b1cc59e254b4f1ea5e649b44d802cbcd66")]
 [assembly: System.Reflection.AssemblyProductAttribute("PARKE-Landing-Page")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PARKE-Landing-Page")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

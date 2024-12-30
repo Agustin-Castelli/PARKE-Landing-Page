@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using PARKE_Landing_Page.Data.Interfaces;
+using PARKE_Landing_Page.Data.Repositories;
 using PARKE_Landing_Page.Data.Services;
 
 var builder = WebApplication.CreateBuilder(args);

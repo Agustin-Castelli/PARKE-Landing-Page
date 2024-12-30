@@ -1,9 +1,10 @@
-﻿using PARKE_Landing_Page.Data.Services;
+﻿using PARKE_Landing_Page.Data.Interfaces;
+using PARKE_Landing_Page.Data.Services;
 using PARKE_Landing_Page.Models.Entities;
 
 namespace PARKE_Landing_Page.Data.Repositories
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly ApplicationContext _context;
 
@@ -30,8 +31,6 @@ namespace PARKE_Landing_Page.Data.Repositories
             _context.SaveChanges();
         }
 
-        public void SaveChanges() { _context.SaveChanges(); }
-
         public User? GetById(int id)
         {
             return _context.Users.FirstOrDefault(p => p.Id == id);
@@ -43,3 +42,4 @@ namespace PARKE_Landing_Page.Data.Repositories
         }
     }
 }
+   

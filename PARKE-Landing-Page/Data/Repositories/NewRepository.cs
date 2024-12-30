@@ -1,8 +1,9 @@
-﻿using PARKE_Landing_Page.Data.Services;
+﻿using PARKE_Landing_Page.Data.Interfaces;
+using PARKE_Landing_Page.Data.Services;
 
 namespace PARKE_Landing_Page.Data.Repositories
 {
-    public class NewRepository 
+    public class NewRepository : INewRepository
     {
         private readonly ApplicationContext _context;
 

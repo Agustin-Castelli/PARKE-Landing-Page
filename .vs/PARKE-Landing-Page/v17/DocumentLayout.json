@@ -1,34 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\",
+  "WorkspaceRootPath": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\agustin\\source\\repos\\parke-landing-page\\parke-landing-page\\data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\geroj\\source\\repos\\parke-landing-page\\parke-landing-page\\data\\repositories\\newrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|solutionrelative:parke-landing-page\\data\\repositories\\newrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\geroj\\source\\repos\\parke-landing-page\\parke-landing-page\\data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|solutionrelative:parke-landing-page\\data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Migrations\\20241230212422_InitialMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PARKE-Landing-Page\\Migrations\\20241230212422_InitialMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\agustin\\source\\repos\\parke-landing-page\\parke-landing-page\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|solutionrelative:parke-landing-page\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\agustin\\source\\repos\\parke-landing-page\\parke-landing-page\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|solutionrelative:parke-landing-page\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\agustin\\source\\repos\\parke-landing-page\\parke-landing-page\\data\\services\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|solutionrelative:parke-landing-page\\data\\services\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\agustin\\source\\repos\\parke-landing-page\\parke-landing-page\\models\\entities\\new.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\geroj\\source\\repos\\parke-landing-page\\parke-landing-page\\models\\entities\\new.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|solutionrelative:parke-landing-page\\models\\entities\\new.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\agustin\\source\\repos\\parke-landing-page\\parke-landing-page\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\geroj\\source\\repos\\parke-landing-page\\parke-landing-page\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|solutionrelative:parke-landing-page\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\geroj\\source\\repos\\parke-landing-page\\parke-landing-page\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|solutionrelative:parke-landing-page\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\geroj\\source\\repos\\parke-landing-page\\parke-landing-page\\data\\services\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|solutionrelative:parke-landing-page\\data\\services\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\geroj\\source\\repos\\parke-landing-page\\parke-landing-page\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|solutionrelative:parke-landing-page\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|c:\\users\\geroj\\source\\repos\\parke-landing-page\\parke-landing-page\\migrations\\20241230212422_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99170D53-0BDC-4B42-BD2B-CDDF8502297A}|PARKE-Landing-Page\\PARKE-Landing-Page.csproj|solutionrelative:parke-landing-page\\migrations\\20241230212422_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,80 +42,93 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "NewRepository.cs",
+              "DocumentMoniker": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Data\\Repositories\\NewRepository.cs",
+              "RelativeDocumentMoniker": "PARKE-Landing-Page\\Data\\Repositories\\NewRepository.cs",
+              "ToolTip": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Data\\Repositories\\NewRepository.cs",
+              "RelativeToolTip": "PARKE-Landing-Page\\Data\\Repositories\\NewRepository.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBsAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T21:35:21.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Data\\Repositories\\UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Data\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "PARKE-Landing-Page\\Data\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Data\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Data\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "PARKE-Landing-Page\\Data\\Repositories\\UserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T21:24:57.124Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "20241230212422_InitialMigration.cs",
-              "DocumentMoniker": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Migrations\\20241230212422_InitialMigration.cs",
+              "DocumentMoniker": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Migrations\\20241230212422_InitialMigration.cs",
               "RelativeDocumentMoniker": "PARKE-Landing-Page\\Migrations\\20241230212422_InitialMigration.cs",
-              "ToolTip": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Migrations\\20241230212422_InitialMigration.cs",
+              "ToolTip": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Migrations\\20241230212422_InitialMigration.cs",
               "RelativeToolTip": "PARKE-Landing-Page\\Migrations\\20241230212422_InitialMigration.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T21:24:22.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Program.cs",
-              "RelativeDocumentMoniker": "PARKE-Landing-Page\\Program.cs",
-              "ToolTip": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Program.cs",
-              "RelativeToolTip": "PARKE-Landing-Page\\Program.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAuwCIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T21:19:09.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-30T21:24:22.957Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\appsettings.json",
-              "RelativeDocumentMoniker": "PARKE-Landing-Page\\appsettings.json",
-              "ToolTip": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\appsettings.json",
-              "RelativeToolTip": "PARKE-Landing-Page\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-30T21:18:54.913Z",
-              "EditorCaption": ""
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Program.cs",
+              "RelativeDocumentMoniker": "PARKE-Landing-Page\\Program.cs",
+              "ToolTip": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Program.cs",
+              "RelativeToolTip": "PARKE-Landing-Page\\Program.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAuwCIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T21:19:09.51Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ApplicationContext.cs",
-              "DocumentMoniker": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Data\\Services\\ApplicationContext.cs",
-              "RelativeDocumentMoniker": "PARKE-Landing-Page\\Data\\Services\\ApplicationContext.cs",
-              "ToolTip": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Data\\Services\\ApplicationContext.cs",
-              "RelativeToolTip": "PARKE-Landing-Page\\Data\\Services\\ApplicationContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T21:09:48.384Z",
-              "EditorCaption": ""
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\appsettings.json",
+              "RelativeDocumentMoniker": "PARKE-Landing-Page\\appsettings.json",
+              "ToolTip": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\appsettings.json",
+              "RelativeToolTip": "PARKE-Landing-Page\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-30T21:18:54.913Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "ApplicationContext.cs",
+              "DocumentMoniker": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Data\\Services\\ApplicationContext.cs",
+              "RelativeDocumentMoniker": "PARKE-Landing-Page\\Data\\Services\\ApplicationContext.cs",
+              "ToolTip": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Data\\Services\\ApplicationContext.cs",
+              "RelativeToolTip": "PARKE-Landing-Page\\Data\\Services\\ApplicationContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T21:09:48.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "New.cs",
-              "DocumentMoniker": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Models\\Entities\\New.cs",
+              "DocumentMoniker": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Models\\Entities\\New.cs",
               "RelativeDocumentMoniker": "PARKE-Landing-Page\\Models\\Entities\\New.cs",
-              "ToolTip": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Models\\Entities\\New.cs",
+              "ToolTip": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Models\\Entities\\New.cs",
               "RelativeToolTip": "PARKE-Landing-Page\\Models\\Entities\\New.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -122,14 +139,13 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Models\\Entities\\User.cs",
+              "DocumentMoniker": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Models\\Entities\\User.cs",
               "RelativeDocumentMoniker": "PARKE-Landing-Page\\Models\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Models\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\Models\\Entities\\User.cs",
               "RelativeToolTip": "PARKE-Landing-Page\\Models\\Entities\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T21:02:18.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-30T21:02:18.758Z"
             }
           ]
         }

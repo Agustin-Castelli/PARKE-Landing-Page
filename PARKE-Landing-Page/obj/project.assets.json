@@ -2716,19 +2716,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Agustin\\.nuget\\packages\\": {}
+    "C:\\Users\\geroj\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\PARKE-Landing-Page.csproj",
+      "projectUniqueName": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\PARKE-Landing-Page.csproj",
       "projectName": "PARKE-Landing-Page",
-      "projectPath": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\PARKE-Landing-Page.csproj",
-      "packagesPath": "C:\\Users\\Agustin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Agustin\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\obj\\",
+      "projectPath": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\PARKE-Landing-Page.csproj",
+      "packagesPath": "C:\\Users\\geroj\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\geroj\\source\\repos\\PARKE-Landing-Page\\PARKE-Landing-Page\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Agustin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\geroj\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2797,7 +2797,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

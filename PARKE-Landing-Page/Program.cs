@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using PARKE_Landing_Page.Data.Interfaces;
 using PARKE_Landing_Page.Data.Repositories;
 using PARKE_Landing_Page.Data.Services;
+using PARKE_Landing_Page.Services;
+using PARKE_Landing_Page.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,14 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+#region Repositories
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+#endregion
+
+#region Services
+builder.Services.AddScoped<IUserService, UserService>();
+#endregion
 
 #region Database  
 builder.Services.AddDbContext<ApplicationContext>(options =>

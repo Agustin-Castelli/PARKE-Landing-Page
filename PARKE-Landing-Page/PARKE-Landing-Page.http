@@ -1,0 +1,6 @@
+@PARKE_Landing_Page_HostAddress = http://localhost:5095
+
+GET {{PARKE_Landing_Page_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

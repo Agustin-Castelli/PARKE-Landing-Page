@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\PARKE-Landing-Page.props" />
-</Project>

@@ -1,5 +1,6 @@
 ﻿using PARKE_Landing_Page.Data.Interfaces;
 using PARKE_Landing_Page.Data.Services;
+using PARKE_Landing_Page.Models.Entities;
 
 namespace PARKE_Landing_Page.Data.Repositories
 {
@@ -12,32 +13,32 @@ namespace PARKE_Landing_Page.Data.Repositories
             _context = context;
         }
 
-        public NewRepository Add(NewRepository newRepository)
+        public New Add(New nnew)
         {
-            _context.Add(newRepository);
+            _context.Set<New>().Add(nnew);
             _context.SaveChanges();
-            return newRepository;
+            return nnew;
         }
 
-        public NewRepository GetById(int id)
+        public New GetById(int id)
         {
-            return _context.Set<NewRepository>().Find(id);
+            return _context.Set<New>().Find(id);
         }
 
-        public List<NewRepository> GetAll()
+        public List<New> GetAll()
         {
-            return _context.Set<NewRepository>().ToList();
+            return _context.Set<New>().ToList();
         }
 
-        public void Update(NewRepository newRepository)
+        public void Update(New nnew)
         {
-            _context.Update(newRepository);
+            _context.Update(nnew);
             _context.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            var entity = _context.Set<NewRepository>().Find(id);
+            var entity = _context.Set<New>().Find(id);
             if (entity != null)
             {
                 _context.Remove(entity); 

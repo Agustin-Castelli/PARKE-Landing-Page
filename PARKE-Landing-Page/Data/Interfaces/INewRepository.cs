@@ -1,13 +1,14 @@
 ﻿using PARKE_Landing_Page.Data.Repositories;
+using PARKE_Landing_Page.Models.Entities;
 
 namespace PARKE_Landing_Page.Data.Interfaces
 {
     public interface INewRepository
     {
-        NewRepository Add(NewRepository newRepository);
-        NewRepository GetById(int id);
-        List<NewRepository> GetAll();
-        void Update(NewRepository newRepository);
-        void Delete(int id);
+        New Add(New nnew);
+        New GetById(int id);
+        List<New> GetAll();
+        void Update(New nnew);
+        void Delete(New nnew);
     }
 }

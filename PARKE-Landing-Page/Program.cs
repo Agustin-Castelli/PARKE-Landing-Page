@@ -19,6 +19,7 @@ builder.Services.AddSwaggerGen();
 
 #region Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<INewRepository, NewRepository>();
 #endregion
 
 #region Services

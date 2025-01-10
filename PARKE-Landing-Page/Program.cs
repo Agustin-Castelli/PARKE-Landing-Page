@@ -82,6 +82,19 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
     new MySqlServerVersion(new Version(8, 0, 2))));
 #endregion
 
+#region CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:5174", "http://localhost:5173", "https://localhost:7062")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
+#endregion
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -56,7 +56,7 @@ namespace PARKE_Landing_Page.Services
             var claimsForToken = new List<Claim>();
             claimsForToken.Add(new Claim("sub", user.Id.ToString()));
             claimsForToken.Add(new Claim("given_name", user.Username));
-
+            
 
             var jwtSecurityToken = new JwtSecurityToken(
               _options.Issuer,

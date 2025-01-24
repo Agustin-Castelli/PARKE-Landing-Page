@@ -10,6 +10,8 @@
         public string Description { get; set; } // Descripción breve opcional
         public string FileName { get; set; }
         public List<string> MediaContent { get; set; }
+        public string TypeOfForm { get; set; }
+        public string IndustrialSector { get; set; }
 
 
         public ICollection<ClientDetail> ClientDetails { get; set; } = new List<ClientDetail>();

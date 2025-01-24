@@ -7,7 +7,7 @@ namespace PARKE_Landing_Page.Data.Services
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<Admin> Admins { get; set; }
         public DbSet<New> News { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

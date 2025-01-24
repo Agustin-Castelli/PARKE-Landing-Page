@@ -10,21 +10,21 @@ namespace PARKE_Landing_Page.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class AdminController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private readonly IAdminService _adminService;
 
-        public UserController(IUserService userService)
+        public AdminController(IAdminService adminService)
         {
-            _userService = userService;
+            _adminService = adminService;
         }
 
         [HttpPost("[action]")]
-        public IActionResult Create(UserRequest user)
+        public IActionResult Create(AdminRequest admin)
         {
             try
             {
-                var obj = _userService.Create(user);
+                var obj = _adminService.Create(admin);
 
                 return Ok(obj);
             }
@@ -36,11 +36,11 @@ namespace PARKE_Landing_Page.Controllers
 
         [HttpPut("[action]/{id}")]
         [Authorize(Policy = "RequireSysAdminRole")]
-        public IActionResult Update([FromRoute] int id, [FromBody] UserRequest user)
+        public IActionResult Update([FromRoute] int id, [FromBody] AdminRequest admin)
         {
             try
             {
-                _userService.Update(id, user);
+                _adminService.Update(id, admin);
                 return NoContent();
             }
             catch (NotFoundException ex)
@@ -50,11 +50,11 @@ namespace PARKE_Landing_Page.Controllers
         }
 
         [HttpGet("[action]/{id}")]
-        public ActionResult<User> GetById([FromRoute] int id)
+        public ActionResult<Admin> GetById([FromRoute] int id)
         {
             try
             {
-                return _userService.GetById(id);
+                return _adminService.GetById(id);
             }
             catch (NotFoundException ex)
             {
@@ -63,9 +63,9 @@ namespace PARKE_Landing_Page.Controllers
         }
 
         [HttpGet("[action]")]
-        public ActionResult<List<User>> GetAll()
+        public ActionResult<List<Admin>> GetAll()
         {
-            return _userService.GetAll();
+            return _adminService.GetAll();
         }
 
     }

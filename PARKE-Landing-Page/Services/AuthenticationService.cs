@@ -13,16 +13,16 @@ namespace PARKE_Landing_Page.Services
 {
     public class AuthenticationService : IAuthenticationService
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IAdminRepository _userRepository;
         private readonly AutenticacionServiceOptions _options;
 
-        public AuthenticationService(IUserRepository userRepository, IOptions<AutenticacionServiceOptions> options)
+        public AuthenticationService(IAdminRepository userRepository, IOptions<AutenticacionServiceOptions> options)
         {
             _userRepository = userRepository;
             _options = options.Value;
         }
 
-        private User? ValidateUser(AuthenticationRequest authenticationRequest)
+        private Admin? ValidateUser(AuthenticationRequest authenticationRequest)
         {
             if (string.IsNullOrEmpty(authenticationRequest.UserName) || string.IsNullOrEmpty(authenticationRequest.Password))
                 return null;

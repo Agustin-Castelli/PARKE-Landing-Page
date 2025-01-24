@@ -72,7 +72,7 @@ namespace PARKE_Landing_Page.Services
                 throw new NotFoundException(nameof(New), id);
             }
 
-            _newrepository.Delete(nnew);
+            _newrepository.Delete(id);
         }
     }
     }

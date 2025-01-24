@@ -18,63 +18,94 @@ namespace PARKE_Landing_Page.Controllers
             _machineService = machineService;
         }
 
-
         [HttpGet]
         public ActionResult<IEnumerable<Machine>> GetAllMachines()
         {
-            var machines = _machineService.GetAllMachines();
-            return Ok(machines);
+            try
+            {
+                var machines = _machineService.GetAllMachines();
+                return Ok(machines);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpGet("{id}")]
         public ActionResult<Machine> GetMachineById(int id)
         {
-            var machine = _machineService.GetMachineById(id);
-
-            if (machine == null)
+            try
             {
-                return NotFound(new { message = "Machine not found." });
-            }
+                var machine = _machineService.GetMachineById(id);
 
-            return Ok(machine);
+                if (machine == null)
+                {
+                    return NotFound(new { message = "Machine not found." });
+                }
+
+                return Ok(machine);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpPost]
         public ActionResult<Machine> AddMachine([FromBody] MachineRequest machineRequest)
         {
-            if (machineRequest == null)
+            try
             {
-                return BadRequest(new { message = "Invalid machine data." });
+                if (machineRequest == null)
+                {
+                    return BadRequest(new { message = "Invalid machine data." });
+                }
+
+                var createdMachine = _machineService.AddMachine(machineRequest);
+
+                return CreatedAtAction(
+                    nameof(GetMachineById),
+                    new { id = createdMachine.Id },
+                    createdMachine);
             }
-
-            var createdMachine = _machineService.AddMachine(machineRequest);
-
-            
-            return CreatedAtAction(
-                nameof(GetMachineById),
-                new { id = createdMachine.Id }, 
-                createdMachine);
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
-
-
 
         [HttpPut("{id}")]
         public ActionResult UpdateMachine(int id, [FromBody] MachineRequest machineRequest)
         {
-            if (machineRequest == null)
+            try
             {
-                return BadRequest(new { message = "Invalid machine data." });
-            }
+                if (machineRequest == null)
+                {
+                    return BadRequest(new { message = "Invalid machine data." });
+                }
 
-            _machineService.UpdateMachine(id, machineRequest);
-            return NoContent(); 
+                _machineService.UpdateMachine(id, machineRequest);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpDelete("{id}")]
         public ActionResult DeleteMachine(int id)
         {
-            _machineService.DeleteMachine(id);
-            return NoContent(); 
+            try
+            {
+                _machineService.DeleteMachine(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
     }
 }

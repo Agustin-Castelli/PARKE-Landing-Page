@@ -9,7 +9,6 @@ namespace PARKE_Landing_Page.Repositories
         Machine GetById(int id);                 
         Machine Add(Machine machine);               
         void Update(Machine machine);            
-        void Delete(int id);                    
-        bool Exists(int id);                   
+        void Delete(int id);                  
     }
 }

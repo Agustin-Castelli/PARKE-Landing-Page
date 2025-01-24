@@ -9,6 +9,6 @@ namespace PARKE_Landing_Page.Data.Interfaces
         New GetById(int id);
         List<New> GetAll();
         void Update(New nnew);
-        void Delete(New nnew);
+        void Delete(int id);
     }
 }

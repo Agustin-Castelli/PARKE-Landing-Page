@@ -13,7 +13,7 @@ namespace PARKE_Landing_Page.Controllers
     {
         private readonly IMachineService _machineService;
 
-        public MachineController(MachineService machineService)
+        public MachineController(IMachineService machineService)
         {
             _machineService = machineService;
         }

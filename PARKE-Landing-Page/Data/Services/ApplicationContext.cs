@@ -9,6 +9,8 @@ namespace PARKE_Landing_Page.Data.Services
 
         public DbSet<Admin> Admins { get; set; }
         public DbSet<New> News { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<ClientDetail> ClientDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

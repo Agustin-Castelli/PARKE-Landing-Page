@@ -20,11 +20,13 @@ builder.Services.AddSwaggerGen();
 #region Repositories
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 builder.Services.AddScoped<INewRepository, NewRepository>();
+builder.Services.AddScoped<IClientRepository, ClientRepository>();  
 #endregion
 
 #region Services
 builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IClientService, ClientService>();    
 #endregion
 
 #region Authentication

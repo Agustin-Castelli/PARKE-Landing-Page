@@ -39,14 +39,10 @@ namespace PARKE_Landing_Page.Data.Repositories
             _context.SaveChanges();
         }
          
-        public IQueryable<Machine> GetMachinesByClientId(int clientId)
+        public IQueryable<Client> GetMachinesByClientId(int clientId)
         {
-            return _context.ClientDetails
-                .Where(cd => cd.ClientId == clientId)
-                .Select(cd => cd.Machine) 
-                .Where(m => m != null);   
+            return _context.Clients.Include(c => c.Machines);
+                
         }
-
-
     }
 }

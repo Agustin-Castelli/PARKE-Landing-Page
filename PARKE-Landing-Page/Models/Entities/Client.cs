@@ -11,5 +11,6 @@ namespace PARKE_Landing_Page.Models.Entities
         public int MachineId { get; set; }
         public ICollection<ClientDetail> ClientDetails { get; set; } = new List<ClientDetail>();
 
+        public ICollection<Machine> Machines { get; set; } = new List<Machine>();
     }
 }

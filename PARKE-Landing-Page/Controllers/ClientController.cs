@@ -68,7 +68,7 @@ namespace PARKE_Landing_Page.Controllers
         }
 
         [HttpGet("GetMachinesByClient/{id}")]
-        public ActionResult<List<Machine>> GetMachinesByClient(int id)
+        public ActionResult<List<Client>> GetMachinesByClient(int id)
         {
             var machines = _clientService.GetMachinesByClientId(id);
 

@@ -11,7 +11,7 @@ namespace PARKE_Landing_Page.Data.Interfaces
         public Client Add(Client client);
         public void Update(Client client);
 
-        public IQueryable<Machine> GetMachinesByClientId(int clientId);
+        public IQueryable<Client> GetMachinesByClientId(int clientId);
 
 
     }

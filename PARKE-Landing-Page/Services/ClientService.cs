@@ -68,7 +68,7 @@ namespace PARKE_Landing_Page.Services
 
             _clientRepository.Update(obj);
         }
-        public List<Machine> GetMachinesByClientId(int clientId)
+        public List<Client> GetMachinesByClientId(int clientId)
         {
             return _clientRepository.GetMachinesByClientId(clientId).ToList();
         }

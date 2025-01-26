@@ -13,10 +13,12 @@ namespace PARKE_Landing_Page.Controllers
     public class AdminController : ControllerBase
     {
         private readonly IAdminService _adminService;
+        private readonly IClientService _clientService;
 
-        public AdminController(IAdminService adminService)
+        public AdminController(IAdminService adminService, IClientService clientService)
         {
             _adminService = adminService;
+            _clientService = clientService;
         }
 
         [HttpPost("[action]")]
@@ -66,6 +68,21 @@ namespace PARKE_Landing_Page.Controllers
         public ActionResult<List<Admin>> GetAll()
         {
             return _adminService.GetAll();
+        }
+
+        [HttpPut("{clientId}/asignarMaquina/{machineId}")]
+        public IActionResult AssignMachine([FromRoute] int clientId, [FromRoute] int machineId)
+        {
+            try
+            {
+                _adminService.AssignMachine(clientId, machineId);
+                return NoContent();
+
+            }
+            catch (NotFoundException ex) 
+            {
+                return NotFound(ex.Message);
+            }
         }
 
     }

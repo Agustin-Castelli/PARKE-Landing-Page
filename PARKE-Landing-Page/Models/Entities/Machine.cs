@@ -12,6 +12,7 @@
         public List<string> MediaContent { get; set; }
         public string TypeOfForm { get; set; }
         public string IndustrialSector { get; set; }
+        public int ClientId { get; set; }
 
 
         public ICollection<ClientDetail> ClientDetails { get; set; } = new List<ClientDetail>();

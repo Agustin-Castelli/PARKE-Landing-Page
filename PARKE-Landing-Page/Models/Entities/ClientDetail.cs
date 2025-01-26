@@ -15,7 +15,7 @@ namespace PARKE_Landing_Page.Models.Entities
         public Client Client { get; set; } 
 
         
-        public string? MachineId { get; set; }
+        public int? MachineId { get; set; }
         [ForeignKey("MachineId")]
         public Machine? Machine { get; set; } 
     }

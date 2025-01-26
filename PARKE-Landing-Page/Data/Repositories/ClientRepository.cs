@@ -46,5 +46,7 @@ namespace PARKE_Landing_Page.Data.Repositories
                 .Select(cd => cd.Machine) 
                 .Where(m => m != null);   
         }
+
+
     }
 }

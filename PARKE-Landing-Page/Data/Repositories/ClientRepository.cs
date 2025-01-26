@@ -38,7 +38,7 @@ namespace PARKE_Landing_Page.Data.Repositories
             _context.Clients.Update(client);
             _context.SaveChanges();
         }
-
+         
         public IQueryable<Machine> GetMachinesByClientId(int clientId)
         {
             return _context.ClientDetails

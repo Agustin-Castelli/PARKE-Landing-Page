@@ -4,6 +4,7 @@ using Microsoft.OpenApi.Models;
 using PARKE_Landing_Page.Data.Interfaces;
 using PARKE_Landing_Page.Data.Repositories;
 using PARKE_Landing_Page.Data.Services;
+using PARKE_Landing_Page.Repositories;
 using PARKE_Landing_Page.Services;
 using PARKE_Landing_Page.Services.Interfaces;
 using System.Text;
@@ -20,13 +21,16 @@ builder.Services.AddSwaggerGen();
 #region Repositories
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 builder.Services.AddScoped<INewRepository, NewRepository>();
-builder.Services.AddScoped<IClientRepository, ClientRepository>();  
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<IMachineRepository, MachineRepository>();
+
 #endregion
 
 #region Services
 builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
-builder.Services.AddScoped<IClientService, ClientService>();    
+builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IMachineService, MachineService>();
 #endregion
 
 #region Authentication

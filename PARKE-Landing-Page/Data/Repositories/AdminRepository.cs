@@ -1,16 +1,21 @@
 ﻿using PARKE_Landing_Page.Data.Interfaces;
 using PARKE_Landing_Page.Data.Services;
 using PARKE_Landing_Page.Models.Entities;
+using PARKE_Landing_Page.Repositories;
 
 namespace PARKE_Landing_Page.Data.Repositories
 {
     public class AdminRepository : IAdminRepository
     {
         private readonly ApplicationContext _context;
+        private readonly IMachineRepository _machineRepository;
+        private readonly IClientRepository _clientRepository;
 
-        public AdminRepository(ApplicationContext context)
+        public AdminRepository(ApplicationContext context, IClientRepository clientRepository, IMachineRepository machineRepository)
         {
             _context = context;
+            _clientRepository = clientRepository;
+            _machineRepository = machineRepository;
         }
 
         public Admin Add(Admin admin)
@@ -44,6 +49,7 @@ namespace PARKE_Landing_Page.Data.Repositories
         {
             return _context.Set<Admin>().FirstOrDefault(u => u.Username == userName);
         }
+
     }
 }
    

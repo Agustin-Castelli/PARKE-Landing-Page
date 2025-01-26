@@ -10,5 +10,6 @@ namespace PARKE_Landing_Page.Services.Interfaces
         public void Delete(int id);
         public Admin GetById(int id);
         public List<Admin> GetAll();
+        void AssignMachine(int clientId, int machineId);
     }
 }

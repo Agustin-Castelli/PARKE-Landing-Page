@@ -10,6 +10,7 @@ namespace PARKE_Landing_Page.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Policy = "Admin")]
     public class AdminController : ControllerBase
     {
         private readonly IAdminService _adminService;
@@ -37,7 +38,6 @@ namespace PARKE_Landing_Page.Controllers
         }
 
         [HttpPut("[action]/{id}")]
-        [Authorize(Policy = "RequireSysAdminRole")]
         public IActionResult Update([FromRoute] int id, [FromBody] AdminRequest admin)
         {
             try

@@ -13,6 +13,6 @@ namespace PARKE_Landing_Page.Data.Interfaces
 
         public IQueryable<Client> GetMachinesByClientId(int clientId);
 
-
+        public Client? GetByEmail(string email);
     }
 }

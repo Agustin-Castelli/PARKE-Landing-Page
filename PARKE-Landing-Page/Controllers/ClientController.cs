@@ -9,6 +9,9 @@ using System.Runtime.ConstrainedExecution;
 
 namespace PARKE_Landing_Page.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
+    [Authorize(Policy = "Client")]
     public class ClientController : ControllerBase
     {
         private readonly IClientService _clientService;

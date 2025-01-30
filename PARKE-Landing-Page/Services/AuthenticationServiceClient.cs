@@ -23,10 +23,11 @@ namespace PARKE_Landing_Page.Services
 
         private Client? ValidateClient(AuthenticationRequestClient authenticationRequest)
         {
-            if (string.IsNullOrEmpty(authenticationRequest.Email) || string.IsNullOrEmpty(authenticationRequest.Password))
+            if (string.IsNullOrEmpty(authenticationRequest.Username) || string.IsNullOrEmpty(authenticationRequest.Password))
                 return null;
 
-            var client = _clientRepository.GetByEmail(authenticationRequest.Email);
+            var client = _clientRepository.GetByUsername(authenticationRequest.Username);
+            Console.WriteLine(client);
 
             if (client == null) return null;
 
@@ -53,7 +54,7 @@ namespace PARKE_Landing_Page.Services
             var claimsForToken = new List<Claim>
             {
                 new Claim("sub", client.Id.ToString()),
-                new Claim("email", client.Email),
+                new Claim("given_name", client.Username),
                 new Claim(ClaimTypes.Role, "Client")
 
             };

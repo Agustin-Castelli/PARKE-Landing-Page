@@ -49,7 +49,7 @@ namespace PARKE_Landing_Page.Services
         {
             var newObj = new Client();
 
-            newObj.Email = client.Email;
+            newObj.Username = client.Username;
             newObj.Password = client.Password;
 
             return _clientRepository.Add(newObj);
@@ -63,7 +63,7 @@ namespace PARKE_Landing_Page.Services
                 throw new NotFoundException(nameof(Client), id);
             }
 
-            if (obj.Email != string.Empty) obj.Email = client.Email;
+            if (obj.Username != string.Empty) obj.Username = client.Username;
             if (obj.Password != string.Empty) obj.Password = client.Password;
 
             _clientRepository.Update(obj);

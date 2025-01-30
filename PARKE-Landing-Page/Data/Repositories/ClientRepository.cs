@@ -44,9 +44,9 @@ namespace PARKE_Landing_Page.Data.Repositories
             return _context.Clients.Include(c => c.Machines);
                 
         }
-        public Client? GetByEmail(string email)
+        public Client? GetByUsername(string username)
         {
-            return _context.Set<Client>().FirstOrDefault(u => u.Email == email);
+            return _context.Set<Client>().FirstOrDefault(u => u.Username == username);
         }
     }
 }

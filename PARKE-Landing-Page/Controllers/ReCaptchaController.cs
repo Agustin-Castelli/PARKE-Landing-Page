@@ -9,23 +9,50 @@ namespace PARKE_Landing_Page.Controllers
     [ApiController]
     public class ReCaptchaController : ControllerBase
     {
-        private const string SecretKey = "6Ldng8IqAAAAAMMvIzmrl2VcT85yscnmPtxPGJbL";  //La Secret Key de reCAPTCHA proporcionada por Google Cloud
+        private readonly IConfiguration _configuration;
+
+        public ReCaptchaController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
 
         [HttpPost("[action]")]
         public async Task<IActionResult> ValidateRecaptcha([FromBody] RecaptchaRequest request)
         {
+
+            Console.WriteLine(request.Token);
+
+            var secretKey = "6Ldng8IqAAAAAMMvIzmrl2VcT85yscnmPtxPGJbL";
+
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.PostAsync(
-                    $"https://www.google.com/recaptcha/api/siteverify?secret={SecretKey}&response={request.Token}",
-                    null
-                    );
+                var response = await httpClient.PostAsync($"https://www.google.com/recaptcha/api/siteverify?secret={secretKey}&response={request.Token}", null);
 
                 // Leer la respuesta como una cadena JSON
                 var jsonResponse = await response.Content.ReadAsStringAsync();
 
+                Console.WriteLine(jsonResponse); // Para ver la respuesta de Google
+
                 // Deserializar la respuesta JSON en un objeto RecaptchaResponse
-                var result = JsonSerializer.Deserialize<RecaptchaResponse>(jsonResponse);
+
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                    PropertyNameCaseInsensitive = true,
+                };
+
+                var result = JsonSerializer.Deserialize<RecaptchaResponse>(jsonResponse, options);
+                //var result = JsonSerializer.Deserialize<RecaptchaResponse>(jsonResponse);
+
+                if (result == null)
+                {
+                    Console.WriteLine("Error al deserializar la respuesta de reCAPTCHA.");
+                    return BadRequest(new
+                    {
+                        success = false,
+                        message = "Error al deserializar la respuesta de reCAPTCHA."
+                    });
+                }
 
                 if (result.Success)
                 {

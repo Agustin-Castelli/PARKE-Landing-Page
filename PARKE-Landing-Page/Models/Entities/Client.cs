@@ -4,6 +4,7 @@ namespace PARKE_Landing_Page.Models.Entities
     public class Client
     {
         public int Id { get; set; }
+        public string? Username { get; set; }
         public string? NameCompany { get; set; }
         public string? Email { get; set; }
         public string? Password { get; set; }

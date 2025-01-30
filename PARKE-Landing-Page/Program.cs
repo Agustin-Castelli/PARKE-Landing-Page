@@ -1,3 +1,4 @@
+using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -28,9 +29,12 @@ builder.Services.AddScoped<IMachineRepository, MachineRepository>();
 
 #region Services
 builder.Services.AddScoped<IAdminService, AdminService>();
-builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IAuthenticationServiceAdmin, AuthenticationServiceAdmin>();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IMachineService, MachineService>();
+builder.Services.AddScoped<IAuthenticationServiceClient, AuthenticationServiceClient>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+
 #endregion
 
 #region Authentication
@@ -59,8 +63,11 @@ builder.Services.AddSwaggerGen(setupAction =>
     });
 });
 
-builder.Services.Configure<AuthenticationService.AutenticacionServiceOptions>(
+builder.Services.Configure<AuthenticationServiceAdmin.AutenticacionServiceOptions>(
     builder.Configuration.GetSection("Authentication"));
+builder.Services.Configure<AuthenticationServiceClient.AutenticacionServiceOptions>(
+    builder.Configuration.GetSection("Authentication"));
+
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer(options =>
@@ -77,6 +84,16 @@ builder.Services.AddAuthentication("Bearer")
         };
     });
 
+builder.Services.AddAuthorization(options =>
+{
+    // Política para clientes y administradores
+    options.AddPolicy("Client", policy =>
+        policy.RequireRole("Client", "Admin"));
+
+    // Política solo para administradores
+    options.AddPolicy("Admin", policy =>
+        policy.RequireRole("Admin"));
+});
 
 
 

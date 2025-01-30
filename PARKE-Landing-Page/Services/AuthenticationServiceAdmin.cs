@@ -11,18 +11,18 @@ using System.Security.Claims;
 
 namespace PARKE_Landing_Page.Services
 {
-    public class AuthenticationService : IAuthenticationService
+    public class AuthenticationServiceAdmin : IAuthenticationServiceAdmin
     {
         private readonly IAdminRepository _userRepository;
         private readonly AutenticacionServiceOptions _options;
 
-        public AuthenticationService(IAdminRepository userRepository, IOptions<AutenticacionServiceOptions> options)
+        public AuthenticationServiceAdmin(IAdminRepository userRepository, IOptions<AutenticacionServiceOptions> options)
         {
             _userRepository = userRepository;
             _options = options.Value;
         }
 
-        private Admin? ValidateUser(AuthenticationRequest authenticationRequest)
+        private Admin? ValidateUser(AuthenticationRequestAdmin authenticationRequest)
         {
             if (string.IsNullOrEmpty(authenticationRequest.UserName) || string.IsNullOrEmpty(authenticationRequest.Password))
                 return null;
@@ -39,7 +39,7 @@ namespace PARKE_Landing_Page.Services
             return null;
 
         }
-        public string Authenticate(AuthenticationRequest authenticationRequest)
+        public string Authenticate(AuthenticationRequestAdmin authenticationRequest)
         {
             var user = ValidateUser(authenticationRequest);
 
@@ -53,10 +53,12 @@ namespace PARKE_Landing_Page.Services
             var credentials = new SigningCredentials(securityPassword, SecurityAlgorithms.HmacSha256);
 
 
-            var claimsForToken = new List<Claim>();
-            claimsForToken.Add(new Claim("sub", user.Id.ToString()));
-            claimsForToken.Add(new Claim("given_name", user.Username));
-            
+            var claimsForToken = new List<Claim>
+            {
+                new Claim("sub", user.Id.ToString()),
+                new Claim("given_name", user.Username),
+                new Claim(ClaimTypes.Role, "Admin")
+            };
 
             var jwtSecurityToken = new JwtSecurityToken(
               _options.Issuer,

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PARKE_Landing_Page.Services.DTOs;
-using AuthService = PARKE_Landing_Page.Services.Interfaces.IAuthenticationService;
+using AuthServiceAdmin = PARKE_Landing_Page.Services.Interfaces.IAuthenticationServiceAdmin;
+using AuthServiceClient = PARKE_Landing_Page.Services.Interfaces.IAuthenticationServiceClient;
 
 namespace PARKE_Landing_Page.Controllers
 {
@@ -8,19 +9,21 @@ namespace PARKE_Landing_Page.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly AuthService _authenticationService;
+        private readonly AuthServiceAdmin _authenticationServiceAdmin;
+        private readonly AuthServiceClient _authenticationServiceClient;
 
-        public AuthenticationController(AuthService authenticationService)
+        public AuthenticationController(AuthServiceAdmin authenticationServiceAdmin, AuthServiceClient authenticationServiceClient)
         {
-            _authenticationService = authenticationService;
+            _authenticationServiceAdmin = authenticationServiceAdmin;
+            _authenticationServiceClient = authenticationServiceClient;
         }
 
         [HttpPost("[action]")]
-        public ActionResult<string> Authenticate([FromBody] AuthenticationRequest authenticationRequest)
+        public ActionResult<string> AuthenticateAdmin([FromBody] AuthenticationRequestAdmin authenticationRequest)
         {
             try
             {
-                string token = _authenticationService.Authenticate(authenticationRequest);
+                string token = _authenticationServiceAdmin.Authenticate(authenticationRequest);
                 return Ok(token);
             }
             catch (UnauthorizedAccessException)
@@ -28,5 +31,19 @@ namespace PARKE_Landing_Page.Controllers
                 return Unauthorized();
             }
         }
+        [HttpPost("[action]")]
+        public ActionResult<string> AuthenticateClient([FromBody] AuthenticationRequestClient authenticationRequest)
+        {
+            try
+            {
+                string token = _authenticationServiceClient.Authenticate(authenticationRequest);
+                return Ok(token);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return Unauthorized();
+            }
+        }
+
     }
 }

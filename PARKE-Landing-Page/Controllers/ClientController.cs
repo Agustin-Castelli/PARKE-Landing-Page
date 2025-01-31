@@ -11,7 +11,6 @@ namespace PARKE_Landing_Page.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Policy = "Client")]
     public class ClientController : ControllerBase
     {
         private readonly IClientService _clientService;
@@ -21,6 +20,7 @@ namespace PARKE_Landing_Page.Controllers
             _clientService = clientService;
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpPost("[action]")]
         public IActionResult Create(ClientRequest client)
         {
@@ -36,6 +36,7 @@ namespace PARKE_Landing_Page.Controllers
             }
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpPut("[action]/{id}")]
        
         public IActionResult Update([FromRoute] int id, [FromBody] ClientRequest client)
@@ -51,6 +52,7 @@ namespace PARKE_Landing_Page.Controllers
             }
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpGet("[action]/{id}")]
         public ActionResult<Client> GetById([FromRoute] int id)
         {
@@ -64,12 +66,14 @@ namespace PARKE_Landing_Page.Controllers
             }
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpGet("[action]")]
         public ActionResult<List<Client>> GetAll()
         {
             return _clientService.GetAll();
         }
 
+        [Authorize(Policy = "Client")]
         [HttpGet("GetMachinesByClient/{id}")]
         public ActionResult<List<Machine>> GetMachinesByClient(int id)
         {

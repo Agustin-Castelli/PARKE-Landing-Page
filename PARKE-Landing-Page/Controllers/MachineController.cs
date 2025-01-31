@@ -4,6 +4,7 @@ using PARKE_Landing_Page.Services.DTOs;
 using PARKE_Landing_Page.Models.Entities;
 using System.Collections.Generic;
 using PARKE_Landing_Page.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PARKE_Landing_Page.Controllers
 {
@@ -52,6 +53,7 @@ namespace PARKE_Landing_Page.Controllers
             }
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpPost]
         public ActionResult<Machine> AddMachine([FromBody] MachineRequest machineRequest)
         {
@@ -75,6 +77,7 @@ namespace PARKE_Landing_Page.Controllers
             }
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpPut("{id}")]
         public ActionResult UpdateMachine(int id, [FromBody] MachineRequest machineRequest)
         {
@@ -94,6 +97,7 @@ namespace PARKE_Landing_Page.Controllers
             }
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpDelete("{id}")]
         public ActionResult DeleteMachine(int id)
         {

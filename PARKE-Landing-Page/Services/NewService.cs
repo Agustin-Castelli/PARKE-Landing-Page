@@ -3,10 +3,11 @@ using PARKE_Landing_Page.Data.Repositories;
 using PARKE_Landing_Page.Models.Entities;
 using PARKE_Landing_Page.Models.Exceptions;
 using PARKE_Landing_Page.Services.DTOs;
+using PARKE_Landing_Page.Services.Interfaces;
 
 namespace PARKE_Landing_Page.Services
 {
-    public class NewService
+    public class NewService : INewService
     {
         private readonly INewRepository _newrepository;
 

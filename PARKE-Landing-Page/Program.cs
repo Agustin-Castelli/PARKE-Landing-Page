@@ -32,6 +32,7 @@ builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddScoped<IAuthenticationServiceAdmin, AuthenticationServiceAdmin>();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IMachineService, MachineService>();
+builder.Services.AddScoped<INewService, NewService>();
 builder.Services.AddScoped<IAuthenticationServiceClient, AuthenticationServiceClient>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 

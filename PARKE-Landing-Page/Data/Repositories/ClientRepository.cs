@@ -38,11 +38,15 @@ namespace PARKE_Landing_Page.Data.Repositories
             _context.Clients.Update(client);
             _context.SaveChanges();
         }
-         
-        public IQueryable<Client> GetMachinesByClientId(int clientId)
+
+        public List<Machine> GetMachinesByClientId(int clientId)
         {
-            return _context.Clients.Include(c => c.Machines);
-                
+            return _context.Clients
+                .Where(c => c.Id == clientId)
+                .SelectMany(c => c.ClientDetails) 
+                .Select(cd => cd.Machine) 
+                .AsQueryable()
+                .ToList();
         }
         public Client? GetByUsername(string username)
         {

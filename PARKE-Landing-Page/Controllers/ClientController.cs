@@ -71,14 +71,16 @@ namespace PARKE_Landing_Page.Controllers
         }
 
         [HttpGet("GetMachinesByClient/{id}")]
-        public ActionResult<List<Client>> GetMachinesByClient(int id)
+        public ActionResult<List<Machine>> GetMachinesByClient(int id)
         {
+            
             var machines = _clientService.GetMachinesByClientId(id);
 
-            if (machines == null || !machines.Any())
+            if (!machines.Any())
             {
                 return NotFound("No machines found for the given client.");
             }
+
 
             return Ok(machines);
         }

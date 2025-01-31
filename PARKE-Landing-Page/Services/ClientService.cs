@@ -68,9 +68,18 @@ namespace PARKE_Landing_Page.Services
 
             _clientRepository.Update(obj);
         }
-        public List<Client> GetMachinesByClientId(int clientId)
+        public List<Machine> GetMachinesByClientId(int clientId)
         {
-            return _clientRepository.GetMachinesByClientId(clientId).ToList();
+
+            var machines = _clientRepository.GetMachinesByClientId(clientId);
+
+            if (!machines.Any())
+            {
+                throw new NotFoundException($"No se encontraron máquinas para el cliente con ID {clientId}.");
+            }
+
+            return machines;
+
         }
 
     }

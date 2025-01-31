@@ -10,8 +10,7 @@ namespace PARKE_Landing_Page.Models.Entities
         public string? Password { get; set; }
         public string PhoneNumber { get; set; } = string.Empty;
         public int MachineId { get; set; }
-        public ICollection<ClientDetail> ClientDetails { get; set; } = new List<ClientDetail>();
 
-        public ICollection<Machine> Machines { get; set; } = new List<Machine>();
+        public ICollection<ClientDetail> ClientDetails { get; set; } = new List<ClientDetail>();
     }
 }

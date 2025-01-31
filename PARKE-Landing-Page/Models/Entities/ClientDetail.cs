@@ -5,10 +5,6 @@ namespace PARKE_Landing_Page.Models.Entities
 {
     public class ClientDetail
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-
         
         public int ClientId { get; set; }
         [ForeignKey("ClientId")]

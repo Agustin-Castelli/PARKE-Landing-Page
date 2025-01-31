@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PARKE_Landing_Page.Models.Entities;
 using PARKE_Landing_Page.Models.Exceptions;
@@ -19,6 +20,7 @@ namespace PARKE_Landing_Page.Controllers
             _newService = newService;
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpPost]
         public ActionResult<New> Create(NewRequest newRequest)
         {
@@ -61,6 +63,7 @@ namespace PARKE_Landing_Page.Controllers
             }
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpPut("{id}")]
         public ActionResult Update(int id, NewRequest newRequest)
         {
@@ -79,6 +82,7 @@ namespace PARKE_Landing_Page.Controllers
             }
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
@@ -95,7 +99,6 @@ namespace PARKE_Landing_Page.Controllers
             {
                 return BadRequest(ex.Message);
             }
-
         }
     }
 }

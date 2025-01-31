@@ -89,8 +89,13 @@ namespace PARKE_Landing_Page.Services
             {
                 throw new NotFoundException($"No se encontro la maquina con el Id {machineId}");
             }
-            machine.ClientId = clientId;
-            _machineRepository.Update(machine);
+            var newDetail = new ClientDetail
+            {
+                ClientId = clientId,
+                MachineId = machineId,
+            };
+            client.ClientDetails.Add(newDetail);
+            _clientRepository.Update(client);
         }
     }
 }

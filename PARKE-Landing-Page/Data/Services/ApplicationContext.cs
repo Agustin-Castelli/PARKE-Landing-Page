@@ -18,6 +18,16 @@ namespace PARKE_Landing_Page.Data.Services
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ClientDetail>()
+                .HasKey(cd => new { cd.ClientId, cd.MachineId });
+            modelBuilder.Entity<ClientDetail>()
+                .HasOne(cd => cd.Client)
+                .WithMany(c => c.ClientDetails)
+                .HasForeignKey(cd => cd.ClientId);
+            modelBuilder.Entity<ClientDetail>()
+                .HasOne(cd => cd.Machine)
+                .WithMany(m => m.ClientDetails )
+                .HasForeignKey(cd => cd.MachineId);
             
         }
     }

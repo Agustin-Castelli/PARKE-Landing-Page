@@ -11,6 +11,6 @@ namespace PARKE_Landing_Page.Services.Interfaces
         public Client GetById(int id);
         public List<Client> GetAll();
 
-        public List<Client> GetMachinesByClientId(int clientId);
+        public List<Machine> GetMachinesByClientId(int clientId);
     }
 }

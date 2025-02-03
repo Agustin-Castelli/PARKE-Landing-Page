@@ -22,7 +22,6 @@ namespace PARKE_Landing_Page.Services
 
             newObj.Title = ndto.Title;
             newObj.Description = ndto.Description;
-            newObj.Date = ndto.Date;
             newObj.Image = ndto.Image;
 
             return _newrepository.Add(newObj);
@@ -58,7 +57,6 @@ namespace PARKE_Landing_Page.Services
 
             if (obj.Title != string.Empty) obj.Title = nnew.Title;
             if (obj.Description != string.Empty) obj.Description = nnew.Description;
-            if (obj.Date != string.Empty) obj.Date = nnew.Date;
             if (obj.Image != string.Empty) obj.Image = nnew.Image;
 
             _newrepository.Update(obj);

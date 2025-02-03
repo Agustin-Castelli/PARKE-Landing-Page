@@ -21,7 +21,7 @@ namespace PARKE_Landing_Page.Controllers
         }
 
         [Authorize(Policy = "Admin")]
-        [HttpPost]
+        [HttpPost("[action]")]
         public ActionResult<New> Create(NewRequest newRequest)
         {
             try
@@ -35,7 +35,7 @@ namespace PARKE_Landing_Page.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("[action]/{id}")]
         public ActionResult<New> GetById(int id)
         {
             try
@@ -49,7 +49,7 @@ namespace PARKE_Landing_Page.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("[action]")]
         public ActionResult<List<New>> GetAll()
         {
             try
@@ -64,7 +64,7 @@ namespace PARKE_Landing_Page.Controllers
         }
 
         [Authorize(Policy = "Admin")]
-        [HttpPut("{id}")]
+        [HttpPut("[action]/{id}")]
         public ActionResult Update(int id, NewRequest newRequest)
         {
             try
@@ -83,7 +83,7 @@ namespace PARKE_Landing_Page.Controllers
         }
 
         [Authorize(Policy = "Admin")]
-        [HttpDelete("{id}")]
+        [HttpDelete("[action]/{id}")]
         public ActionResult Delete(int id)
         {
             try

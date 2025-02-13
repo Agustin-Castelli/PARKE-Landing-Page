@@ -25,7 +25,7 @@ namespace Infrastructure.Services
         public void SendContactEmail(ContactFormRequest form)
         {
             string subject = form.Subject;
-            string body = $"Nombre: {form.Name}\nEmail: {form.Email}\nMensaje: {form.Message}";
+            string body = $"Nombre: {form.Name}\nEmpresa: {form.Company}\nTeléfono: {form.Phone}\nEmail: {form.Email}\nMensaje: {form.Message}";
 
             SendEmail("parketesting@gmail.com", subject, body);  // Dirección de destino (tu cuenta de Gmail)
         }

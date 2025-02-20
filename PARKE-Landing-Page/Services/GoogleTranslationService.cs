@@ -8,7 +8,7 @@ namespace PARKE_Landing_Page.Services
 {
     public class GoogleTranslationService
     {
-        private static readonly string apiKey = "AIzaSyDTmAEALL-4Do2m477GeJA2SU8I2YVYDKg"; // Reemplaza con tu clave de API
+        private static readonly string apiKey = "API-KEY"; // Reemplaza con tu clave de API
         private static readonly string endpoint = "https://translation.googleapis.com/language/translate/v2";
 
         public async Task<string> TranslateTextAsync(string text, string targetLanguage)

@@ -12,8 +12,8 @@ using PARKE_Landing_Page.Data.Services;
 namespace PARKE_Landing_Page.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20250203231946_Add-Migration deletedDate")]
-    partial class AddMigrationdeletedDate
+    [Migration("20250318215335_newMigration")]
+    partial class newMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

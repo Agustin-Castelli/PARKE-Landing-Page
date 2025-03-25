@@ -22,6 +22,7 @@ namespace Infrastructure.Services
             _smtpClient.UseDefaultCredentials = false;
         }
 
+        // Método para el envío de correo a la empresa
         public void SendContactEmail(ContactFormRequest form)
         {
             string subject = form.Subject;
@@ -30,6 +31,16 @@ namespace Infrastructure.Services
             SendEmail("parketesting@gmail.com", subject, body);  // Dirección de destino (tu cuenta de Gmail)
         }
 
+        // Método para enviar correo de confirmación al usuario
+        public void SendUserConfirmationEmail(string userEmail, string userName)
+        {
+            string subject = "Solicitud de registro PARKE Portal Web";
+            string body = $"Hola {userName},\n\nLe notificamos que hemos recibido su solicitud de registro de cuenta para el Portal Web de Clientes de PARKE. Nos pondremos en contacto a la brevedad para proporcionarle más información.\n\nSaludos,\nEl equipo de PARKE";
+
+            SendEmail(userEmail, subject, body);  // Envía el correo al usuario
+        }
+
+        // Método privado para enviar correos
         private void SendEmail(string toEmail, string subject, string body)
         {
             var mailMessage = new MailMessage(_fromEmail, toEmail, subject, body)

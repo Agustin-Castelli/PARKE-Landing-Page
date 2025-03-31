@@ -12,7 +12,7 @@ namespace PARKE_Landing_Page.Models.Entities
         public Client Client { get; set; }
 
         [Key, Column(Order = 1)]
-        public int? MachineId { get; set; }
+        public int MachineId { get; set; }
 
         [ForeignKey("MachineId")]
         public Machine? Machine { get; set; } 

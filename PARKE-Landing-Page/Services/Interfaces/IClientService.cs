@@ -12,5 +12,7 @@ namespace PARKE_Landing_Page.Services.Interfaces
         public List<Client> GetAll();
 
         public List<Machine> GetMachinesByClientId(int clientId);
+
+        bool DeleteClientMachine(int clientId, int machineId);
     }
 }

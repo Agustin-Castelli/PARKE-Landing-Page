@@ -51,6 +51,9 @@ namespace PARKE_Landing_Page.Services
 
             newObj.Username = client.Username;
             newObj.Password = client.Password;
+            newObj.NameCompany = client.NameCompany;
+            newObj.PhoneNumber = client.PhoneNumber;
+            newObj.Email = client.Email;
 
             return _clientRepository.Add(newObj);
         }
@@ -65,6 +68,9 @@ namespace PARKE_Landing_Page.Services
 
             if (obj.Username != string.Empty) obj.Username = client.Username;
             if (obj.Password != string.Empty) obj.Password = client.Password;
+            if (obj.NameCompany != string.Empty) obj.NameCompany = client.NameCompany;
+            if (obj.PhoneNumber != string.Empty) obj.PhoneNumber = client.PhoneNumber;
+            if (obj.Email != string.Empty) obj.Email = client.Email;
 
             _clientRepository.Update(obj);
         }

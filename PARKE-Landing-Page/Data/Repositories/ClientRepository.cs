@@ -48,6 +48,14 @@ namespace PARKE_Landing_Page.Data.Repositories
                 .AsQueryable()
                 .ToList();
         }
+
+        public Client GetByIdWithDetails(int id)
+        {
+            return _context.Clients
+                .Include(c => c.ClientDetails)
+                .FirstOrDefault(c => c.Id == id);
+        }
+
         public Client? GetByUsername(string username)
         {
             return _context.Set<Client>().FirstOrDefault(u => u.Username == username);

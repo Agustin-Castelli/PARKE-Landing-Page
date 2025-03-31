@@ -12,6 +12,7 @@ namespace PARKE_Landing_Page.Data.Interfaces
         public void Update(Client client);
 
         public List<Machine> GetMachinesByClientId(int clientId);
+        public Client GetByIdWithDetails(int id);
 
         public Client? GetByUsername(string username);
     }

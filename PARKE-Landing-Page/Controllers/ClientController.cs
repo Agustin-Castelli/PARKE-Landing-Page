@@ -89,5 +89,16 @@ namespace PARKE_Landing_Page.Controllers
             return Ok(machines);
         }
 
+        [HttpDelete("{clientId}/machine/{machineId}")]
+        public ActionResult DeleteMachine([FromRoute] int clientId, [FromRoute] int machineId)
+        {
+            var result = _clientService.DeleteClientMachine(clientId, machineId);
+            if (result)
+            {
+                return Ok(new { message = "Machine deleted successfully." });
+            }
+            return NotFound(new { message = "Machine not found." });
+        }
+
     }
 }

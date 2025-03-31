@@ -79,21 +79,31 @@ namespace PARKE_Landing_Page.Services
 
         public void AssignMachine(int clientId, int machineId)
         {
-           var client = _clientRepository.GetById(clientId);
+           var client = _clientRepository.GetByIdWithDetails(clientId);
+
             if (client == null)
             {
                 throw new NotFoundException($"No se encontro el cliente con el Id {clientId}");
             }
+
             var machine = _machineRepository.GetById(machineId);
+
             if (machine == null)
             {
                 throw new NotFoundException($"No se encontro la maquina con el Id {machineId}");
             }
+
+            if (client.ClientDetails.Any(cd => cd.MachineId == machineId))
+            {
+                throw new DuplicateElementException("Esta máquina ya está asignada al cliente");
+            }
+
             var newDetail = new ClientDetail
             {
                 ClientId = clientId,
                 MachineId = machineId,
             };
+
             client.ClientDetails.Add(newDetail);
             _clientRepository.Update(client);
         }

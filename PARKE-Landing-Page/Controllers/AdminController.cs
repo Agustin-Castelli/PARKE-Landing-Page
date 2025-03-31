@@ -83,6 +83,10 @@ namespace PARKE_Landing_Page.Controllers
             {
                 return NotFound(ex.Message);
             }
+            catch (DuplicateElementException ex)
+            {
+                return Conflict(new { mensaje = ex.Message });
+            }
         }
 
     }

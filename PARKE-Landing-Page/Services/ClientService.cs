@@ -1,5 +1,7 @@
-﻿using PARKE_Landing_Page.Data.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using PARKE_Landing_Page.Data.Interfaces;
 using PARKE_Landing_Page.Data.Repositories;
+using PARKE_Landing_Page.Data.Services;
 using PARKE_Landing_Page.Models.Entities;
 using PARKE_Landing_Page.Models.Exceptions;
 using PARKE_Landing_Page.Services.DTOs;
@@ -9,10 +11,12 @@ namespace PARKE_Landing_Page.Services
     public class ClientService : IClientService
     {
         private readonly IClientRepository _clientRepository;
+        private readonly ApplicationContext _context;
 
-        public ClientService(IClientRepository clientRepository)
+        public ClientService(IClientRepository clientRepository, ApplicationContext context)
         {
             _clientRepository = clientRepository;
+            _context = context;
         }
 
         public Client GetById(int id)
@@ -76,17 +80,30 @@ namespace PARKE_Landing_Page.Services
         }
         public List<Machine> GetMachinesByClientId(int clientId)
         {
-
             var machines = _clientRepository.GetMachinesByClientId(clientId);
 
-            if (!machines.Any())
+            
+            return machines.Any() ? machines : new List<Machine>();
+        }
+
+        public bool DeleteClientMachine(int clientId, int machineId)
+        {
+            // Buscar la relación en ClientDetail
+            var clientDetail = _context.ClientDetails
+                                       .FirstOrDefault(cd => cd.ClientId == clientId && cd.MachineId == machineId);
+
+            if (clientDetail == null)
             {
-                throw new NotFoundException($"No se encontraron máquinas para el cliente con ID {clientId}.");
+                return false; 
             }
 
-            return machines;
+            
+            _context.ClientDetails.Remove(clientDetail);
+            _context.SaveChanges();
 
+            return true;
         }
+
 
     }
 }

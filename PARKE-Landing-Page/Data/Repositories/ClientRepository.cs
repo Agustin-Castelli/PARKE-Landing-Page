@@ -58,7 +58,7 @@ namespace PARKE_Landing_Page.Data.Repositories
 
         public Client? GetByUsername(string username)
         {
-            return _context.Set<Client>().FirstOrDefault(u => u.Username == username);
+            return _context.Set<Client>().FirstOrDefault(u => u.Username == username); 
         }
     }
 }

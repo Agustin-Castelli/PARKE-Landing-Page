@@ -9,6 +9,7 @@ namespace PARKE_Landing_Page.Models.Entities
         public string? Email { get; set; }
         public string? Password { get; set; }
         public string PhoneNumber { get; set; } = string.Empty;
+        public string? Adress { get; set; }
         public ICollection<ClientDetail> ClientDetails { get; set; } = new List<ClientDetail>();
     }
 }

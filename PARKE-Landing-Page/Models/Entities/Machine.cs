@@ -7,6 +7,7 @@
         public string? Type { get; set; } // Tipo de máquina (ejemplo: "Embolsadoras", "Cosedoras", etc.)
         public string? Subtype { get; set; } // Subtipo dentro del tipo (ejemplo: "Boca abierta", "Valvuladas", etc.)
         public string Model { get; set; } // Modelo específico (ejemplo: "EP5B-TC", "GK35")
+        public string SerialNumber { get; set; } // número de serie de la máquina
         public string Description { get; set; } // Descripción breve opcional
         public string FileName { get; set; }
         public List<string> MediaContent { get; set; }

@@ -19,7 +19,7 @@ namespace PARKE_Landing_Page.Controllers
             _machineService = machineService;
         }
 
-        [HttpGet]
+        [HttpGet("[action]")]
         public ActionResult<IEnumerable<Machine>> GetAllMachines()
         {
             try

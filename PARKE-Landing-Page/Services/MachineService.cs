@@ -40,6 +40,7 @@ namespace PARKE_Landing_Page.Services
                 Type = machineRequest.Type,
                 Subtype = machineRequest.Subtype,
                 Model = machineRequest.Model,
+                SerialNumber = machineRequest.SerialNumber,
                 Description = machineRequest.Description,
                 FileName = machineRequest.FileName,
                 MediaContent = machineRequest.MediaContent,
@@ -64,6 +65,7 @@ namespace PARKE_Landing_Page.Services
             machine.Type = machineRequest.Type;
             machine.Subtype = machineRequest.Subtype;
             machine.Model = machineRequest.Model;
+            machine.SerialNumber = machineRequest.SerialNumber;
             machine.Description = machineRequest.Description;
             machine.FileName = machineRequest.FileName;
             machine.MediaContent = machineRequest.MediaContent;

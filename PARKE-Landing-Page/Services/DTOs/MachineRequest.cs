@@ -11,6 +11,7 @@ namespace PARKE_Landing_Page.Services.DTOs
         public string? Subtype { get; set; } // Subtipo dentro del tipo (ejemplo: "Boca abierta", "Valvuladas", etc.)
         [Required]
         public string Model { get; set; } // Modelo específico (ejemplo: "EP5B-TC", "GK35")
+        public string SerialNumber { get; set; } // Numero de serie de la maquina
         public string Description { get; set; } // Descripción breve opcional
         public string FileName { get; set; }
         public List<string> MediaContent { get; set; }

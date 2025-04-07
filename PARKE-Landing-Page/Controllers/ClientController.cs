@@ -89,7 +89,8 @@ namespace PARKE_Landing_Page.Controllers
             return Ok(machines);
         }
 
-        [HttpDelete("{clientId}/machine/{machineId}")]
+        [Authorize(Policy = "Admin")]
+        [HttpDelete("{clientId}/[action]/{machineId}")]
         public ActionResult DeleteMachine([FromRoute] int clientId, [FromRoute] int machineId)
         {
             var result = _clientService.DeleteClientMachine(clientId, machineId);

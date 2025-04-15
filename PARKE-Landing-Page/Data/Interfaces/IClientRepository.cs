@@ -13,6 +13,7 @@ namespace PARKE_Landing_Page.Data.Interfaces
 
         public List<Machine> GetMachinesByClientId(int clientId);
         public Client GetByIdWithDetails(int id);
+        public void RemoveClientMachines(int clientId);
 
         public Client? GetByUsername(string username);
     }

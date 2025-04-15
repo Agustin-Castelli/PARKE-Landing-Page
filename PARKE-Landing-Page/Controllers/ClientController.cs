@@ -53,6 +53,25 @@ namespace PARKE_Landing_Page.Controllers
         }
 
         [Authorize(Policy = "Admin")]
+        [HttpDelete("[action]/{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _clientService.Delete(id);
+                return NoContent();
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch
+            {
+                return StatusCode(500, "Error interno al eliminar cliente");
+            }
+        }
+
+        [Authorize(Policy = "Admin")]
         [HttpGet("[action]/{id}")]
         public ActionResult<Client> GetById([FromRoute] int id)
         {

@@ -40,14 +40,26 @@ namespace PARKE_Landing_Page.Services
 
         public void Delete(int id)
         {
-            var nnew = _clientRepository.GetById(id);
+            // 1. Verificar existencia del cliente
+            var client = _clientRepository.GetByIdWithDetails(id);
 
-            if (nnew == null)
+            if (client == null)
             {
                 throw new NotFoundException(nameof(Client), id);
             }
 
-            _clientRepository.Delete(nnew);
+            // 2. Validaciones de negocio (ejemplo)
+            if (client.ClientDetails?.Count > 0)
+            {
+                // Opcional: Podrías lanzar una excepción especial si prefieres
+                // throw new BusinessException("El cliente tiene máquinas asignadas");
+
+                // O eliminarlas como en nuestra implementación
+                _clientRepository.RemoveClientMachines(client.Id);
+            }
+
+            // 3. Eliminar el cliente
+            _clientRepository.Delete(client);
         }
         public Client Create(ClientRequest client)
         {

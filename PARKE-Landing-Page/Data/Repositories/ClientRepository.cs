@@ -49,6 +49,16 @@ namespace PARKE_Landing_Page.Data.Repositories
                 .ToList();
         }
 
+        public void RemoveClientMachines(int clientId)
+        {
+            var details = _context.ClientDetails
+                                .Where(cd => cd.ClientId == clientId)
+                                .ToList();
+
+            _context.ClientDetails.RemoveRange(details);
+            _context.SaveChanges();
+        }
+
         public Client GetByIdWithDetails(int id)
         {
             return _context.Clients

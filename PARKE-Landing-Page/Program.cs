@@ -35,6 +35,8 @@ builder.Services.AddScoped<IMachineService, MachineService>();
 builder.Services.AddScoped<INewService, NewService>();
 builder.Services.AddScoped<IAuthenticationServiceClient, AuthenticationServiceClient>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IHashingService, HashingService>();
+
 
 #endregion
 

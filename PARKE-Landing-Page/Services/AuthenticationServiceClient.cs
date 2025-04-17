@@ -14,11 +14,13 @@ namespace PARKE_Landing_Page.Services
     {
         private readonly IClientRepository _clientRepository;
         private readonly AutenticacionServiceOptions _options;
+        private readonly IHashingService _hashingService;
 
-        public AuthenticationServiceClient(IClientRepository clientRepository, IOptions<AutenticacionServiceOptions> options)
+        public AuthenticationServiceClient(IClientRepository clientRepository, IOptions<AutenticacionServiceOptions> options, IHashingService hashingService)
         {
             _clientRepository = clientRepository;
             _options = options.Value;
+            _hashingService = hashingService;
         }
 
         private Client? ValidateClient(AuthenticationRequestClient authenticationRequest)
@@ -31,7 +33,7 @@ namespace PARKE_Landing_Page.Services
 
             if (client == null) return null;
 
-            if (client.Password == authenticationRequest.Password)
+            if (_hashingService.Verify(authenticationRequest.Password, client.Password))
             {
                 return client;
             }

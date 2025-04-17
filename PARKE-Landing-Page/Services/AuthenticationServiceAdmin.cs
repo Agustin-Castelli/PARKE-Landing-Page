@@ -15,11 +15,13 @@ namespace PARKE_Landing_Page.Services
     {
         private readonly IAdminRepository _userRepository;
         private readonly AutenticacionServiceOptions _options;
+        private readonly IHashingService _hashingService;
 
-        public AuthenticationServiceAdmin(IAdminRepository userRepository, IOptions<AutenticacionServiceOptions> options)
+        public AuthenticationServiceAdmin(IAdminRepository userRepository, IOptions<AutenticacionServiceOptions> options, IHashingService hashingService)
         {
             _userRepository = userRepository;
             _options = options.Value;
+            _hashingService = hashingService;
         }
 
         private Admin? ValidateUser(AuthenticationRequestAdmin authenticationRequest)
@@ -31,7 +33,7 @@ namespace PARKE_Landing_Page.Services
 
             if (user == null) return null;
 
-            if (user.Password == authenticationRequest.Password)
+            if (_hashingService.Verify(authenticationRequest.Password, user.Password))
             {
                 return user;
             }

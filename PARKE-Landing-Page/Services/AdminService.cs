@@ -12,12 +12,14 @@ namespace PARKE_Landing_Page.Services
         private readonly IAdminRepository _adminRepository;
         private readonly IClientRepository _clientRepository;
         private readonly IMachineRepository _machineRepository;
+        private readonly IHashingService _hashingService;
 
-        public AdminService (IAdminRepository adminRepository, IClientRepository clientRepository, IMachineRepository machineRepository)
+        public AdminService (IAdminRepository adminRepository, IClientRepository clientRepository, IMachineRepository machineRepository, IHashingService hashingService)
         {
             _adminRepository = adminRepository;
             _clientRepository = clientRepository;
             _machineRepository = machineRepository;
+            _hashingService = hashingService;
         }
 
         public Admin Create(AdminRequest admin)
@@ -25,7 +27,7 @@ namespace PARKE_Landing_Page.Services
             var newObj = new Admin();
 
             newObj.Username = admin.Username;
-            newObj.Password = admin.Password;
+            newObj.Password = _hashingService.Hash(admin.Password);
 
             return _adminRepository.Add(newObj);
         }

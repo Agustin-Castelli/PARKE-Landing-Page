@@ -12,11 +12,13 @@ namespace PARKE_Landing_Page.Services
     {
         private readonly IClientRepository _clientRepository;
         private readonly ApplicationContext _context;
+        private readonly IHashingService _hashingService;
 
-        public ClientService(IClientRepository clientRepository, ApplicationContext context)
+        public ClientService(IClientRepository clientRepository, ApplicationContext context, IHashingService hashingService)
         {
             _clientRepository = clientRepository;
             _context = context;
+            _hashingService = hashingService;
         }
 
         public Client GetById(int id)
@@ -66,11 +68,13 @@ namespace PARKE_Landing_Page.Services
             var newObj = new Client();
 
             newObj.Username = client.Username;
-            newObj.Password = client.Password;
+            newObj.Password = _hashingService.Hash(client.Password);
             newObj.NameCompany = client.NameCompany;
             newObj.PhoneNumber = client.PhoneNumber;
             newObj.Adress = client.Adress;
             newObj.Email = client.Email;
+
+            
 
             return _clientRepository.Add(newObj);
         }

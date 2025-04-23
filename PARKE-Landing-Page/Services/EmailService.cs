@@ -50,5 +50,15 @@ namespace Infrastructure.Services
 
             _smtpClient.Send(mailMessage);
         }
+
+        //metodo para recibir el mail de recuperacion de contraseña del usuario
+        public void SendPasswordRecoveryRequestToCompany(string userEmail)
+        {
+            string subject = "Solicitud de recuperación de contraseña";
+            string body = $"Se ha recibido una solicitud de recuperación de contraseña del usuario con el email: {userEmail}";
+
+            SendEmail("parketesting@gmail.com", subject, body); 
+        }
+
     }
 }

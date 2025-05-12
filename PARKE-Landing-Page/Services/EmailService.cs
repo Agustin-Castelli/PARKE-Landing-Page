@@ -45,20 +45,31 @@ namespace Infrastructure.Services
         {
             var mailMessage = new MailMessage(_fromEmail, toEmail, subject, body)
             {
-                IsBodyHtml = false 
+                IsBodyHtml = true 
             };
 
             _smtpClient.Send(mailMessage);
         }
 
-        //metodo para recibir el mail de recuperacion de contraseña del usuario
-        public void SendPasswordRecoveryRequestToCompany(string userEmail)
+        public void SendRecoveryLinkToUser(string email, string link)
         {
-            string subject = "Solicitud de recuperación de contraseña";
-            string body = $"Se ha recibido una solicitud de recuperación de contraseña del usuario con el email: {userEmail}";
+            var subject = "Recuperación de contraseña";
+            var body = $@"
+        <p>Hola,</p>
+        <p>Recibimos una solicitud para restablecer tu contraseña.</p>
+        <p>Si fuiste tú, hacé clic en el siguiente enlace para continuar:</p>
+        <p><a href='{link}'>Recuperar contraseña</a></p>
+        <p>Si no solicitaste esto, podés ignorar este mensaje.</p>
+        <br/>
+        <p>Gracias,</p>
+        <p>El equipo de PARKE</p>
+    ";
 
-            SendEmail("parketesting@gmail.com", subject, body); 
+            
+            SendEmail(email, subject, body);
         }
+
+
 
     }
 }

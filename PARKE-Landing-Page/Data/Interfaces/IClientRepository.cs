@@ -16,5 +16,6 @@ namespace PARKE_Landing_Page.Data.Interfaces
         public void RemoveClientMachines(int clientId);
 
         public Client? GetByUsername(string username);
+        Client GetByEmail(string email);
     }
 }

@@ -70,5 +70,10 @@ namespace PARKE_Landing_Page.Data.Repositories
         {
             return _context.Set<Client>().FirstOrDefault(u => u.Username == username); 
         }
+
+        public Client GetByEmail(string email)
+        {
+            return _context.Clients.FirstOrDefault(c => c.Email == email);
+        }
     }
 }

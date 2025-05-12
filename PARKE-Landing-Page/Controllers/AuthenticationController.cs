@@ -53,16 +53,48 @@ namespace PARKE_Landing_Page.Controllers
         {
             try
             {
-                
                 if (string.IsNullOrWhiteSpace(request.Email))
                     return BadRequest("Email inválido.");
 
-                
+                // Lógica para generar el link de recuperación (puede incluir un token firmado con expiración)
+                string recoveryToken = _authenticationServiceClient.GenerateRecoveryToken(request.Email);
 
-                // Enviar el correo a la empresa
-                _emailService.SendPasswordRecoveryRequestToCompany(request.Email);
+                string recoveryLink = $"https://localhost:5173/resetPassword?token={recoveryToken}";
 
-                return Ok("Solicitud enviada correctamente.");
+                // envia el link al usuario
+                _emailService.SendRecoveryLinkToUser(request.Email, recoveryLink);
+
+                return Ok("Link de recuperación enviado al correo.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno: {ex.Message}");
+            }
+        }
+
+
+        [HttpPost("[action]")]
+        public IActionResult ResetPassword([FromBody] ResetPasswordRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.Token) ||
+        string.IsNullOrWhiteSpace(request.NewPassword))
+            {
+                return BadRequest("Datos inválidos.");
+            }
+
+            if (request.NewPassword != request.ConfirmPassword)
+            {
+                return BadRequest("Las contraseñas no coinciden.");
+            }
+
+            try
+            {
+                bool result = _authenticationServiceClient.ResetPassword(request.Token, request.NewPassword);
+
+                if (!result)
+                    return BadRequest("El token es inválido o ha expirado.");
+
+                return Ok("Contraseña actualizada correctamente.");
             }
             catch (Exception ex)
             {

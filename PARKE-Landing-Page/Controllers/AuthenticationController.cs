@@ -66,6 +66,11 @@ namespace PARKE_Landing_Page.Controllers
 
                 return Ok("Link de recuperación enviado al correo.");
             }
+            catch (ArgumentException ex)
+            {
+                
+                return BadRequest(ex.Message);
+            }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Error interno: {ex.Message}");

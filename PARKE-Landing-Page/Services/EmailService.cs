@@ -31,6 +31,12 @@ namespace Infrastructure.Services
             SendEmail("parketesting@gmail.com", subject, body);  // Dirección de destino (tu cuenta de Gmail)
         }
 
+        // Método para el envío de pedidos de cotización a la empresa
+        public void SendQuoteEmail(string subject, string fullBody)
+        {
+            SendEmail("parketesting@gmail.com", subject, fullBody);
+        }
+
         // Método para enviar correo de confirmación al usuario
         public void SendUserConfirmationEmail(string userEmail, string userName)
         {

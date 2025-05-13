@@ -5,6 +5,7 @@ namespace PARKE_Landing_Page.Services.Interfaces
     public interface IEmailService
     {
         public void SendContactEmail(ContactFormRequest form);
+        public void SendQuoteEmail(string subject, string fullBody);
         public void SendUserConfirmationEmail(string userEmail, string userName);
         void SendRecoveryLinkToUser(string email, string link);
     }

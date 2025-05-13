@@ -27,5 +27,24 @@ namespace WebAPI.Controllers
 
             return Ok("Email sent successfully.");
         }
+
+        [HttpPost("quick-quote")]
+        public IActionResult SubmitQuickQuote([FromBody] QuoteFormRequest request)
+        {
+            try
+            {
+                _emailService.SendQuoteEmail(
+                    "Nueva cotización PARKE",  // Asunto fijo
+                    $"DATOS DEL CLIENTE:\n{request.CustomerData}\n\n" +
+                    $"DATOS DE LA MÁQUINA:\n{request.MachineData}"
+                );
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error al enviar: {ex.Message}");
+            }
+        }
     }
 }

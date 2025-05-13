@@ -140,6 +140,8 @@ namespace PARKE_Landing_Page.Services
         //Metodo para generar el token para la nueva contraseña
         public string GenerateRecoveryToken(string email)
         {
+            var client = _clientRepository.GetByEmail(email);
+            if (client == null) throw new ArgumentException("El correo no está registrado.");
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes("clave-super-larga-y-segura-1234567890abcd"); // Usá algo seguro y configurable
 
